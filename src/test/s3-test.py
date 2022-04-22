@@ -12,8 +12,16 @@ def s3(aws_region: str) -> S3:
 S3_BUCKET = os.environ['S3_TEST_BUCKET']
 
 
+def test_put_get_object(s3: S3) -> None:
+    # Given an object and key
+    s = 'test'
+    key = 'test-key'
 
-def test_get_attributes(s3):
+    # When put in S3
+    s3.put_object(S3_BUCKET, key, s)
+
+
+def test_get_attributes(s3: S3) -> None:
     # Given bucket and key
     bucket = S3_BUCKET
     key = 's3-test'
