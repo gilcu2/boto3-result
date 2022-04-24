@@ -21,7 +21,21 @@ pip instal boto3-result
 
 ## Examples
 
-- See tests
+```python
+    from boto3-result.s3 import S3
+    import os
+
+    s3=S3.create().unwrap()
+    
+    S3_BUCKET = os.environ['S3_TEST_BUCKET']
+    key = 'test-key'
+    s = 's3_test'
+    
+    r=s3.put_object(S3_BUCKET, key, s) \
+        .flatmap(lambda _: s3.get_attributes(S3_BUCKET, key)).flatmap()
+    
+    print(r.unwrap()['LastModified'])
+```
 
 ## Test running
 
