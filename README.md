@@ -5,7 +5,7 @@ Library that encapsulate Boto3 in option.Result
 - One class for each AWS service
 - Returning Result instead of throwing exception
 - Tested with library versions in requirements.txt
-- Source on [github](https://github.com/gilcu2/boto3-result)
+- Source on [github](https://github.com/gilcu2/boto3r)
 
 ## Requirements
 
