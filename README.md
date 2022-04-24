@@ -1,28 +1,28 @@
 # Boto3-result
 
-Library that encapsulate Boto3 in option.Result.
+Library that encapsulate Boto3 in option.Result
 
 - One class for each AWS service
 - Returning Result instead of throwing exception
 - Tested with library versions in requirements.txt
-- Source on [github](https://github.com/gilcu2/boto3-result.git)
+- Source on [github](https://github.com/gilcu2/boto3-result)
 
 ## Requirements
 
-- pip
+- python3/pip
 - A valid boto3 configuration as explained in
   [boto3 config](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html)
 
 ## Use
 
 ```shell
-pip instal boto3-result
+pip install boto3r
 ```
 
 ## Examples
 
 ```python
-    from boto3-result.s3 import S3
+    from boto3r.s3 import S3
     import os
 
     s3=S3.create().unwrap()

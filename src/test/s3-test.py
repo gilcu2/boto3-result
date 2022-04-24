@@ -1,8 +1,6 @@
 import os
-from s3 import S3
-from datetime import datetime
+from boto3r.s3 import S3
 import pytest
-from option import Result, Option, Ok, Err
 
 S3_BUCKET = os.environ['S3_TEST_BUCKET']
 
@@ -26,7 +24,6 @@ def test_put_get_object(s3: S3) -> None:
 
     # And contains the input string
     assert r.unwrap().decode('utf-8') == s
-
 
 
 def test_get_attributes(s3: S3) -> None:
